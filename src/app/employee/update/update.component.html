@@ -1,0 +1,28 @@
+<h1 class="text-center text-info">Add Employee</h1>
+<div class="container col-md-6">
+  <div class="card">
+    <div class="card-body">
+      <div class="form-group">
+        <label > Your Name </label>
+        <input #empName="ngModel" required [(ngModel)]="object.name" placeholder="your name" type="text" class="form-control ">
+        <div *ngIf="empName.touched && empName.invalid  " class="alert alert-danger">
+          please enter valid name
+        </div>
+      </div>
+      <div class="form-group">
+        <label > Your position </label>
+        <input #empposition="ngModel" required [(ngModel)]="object.position" placeholder="your position" type="text" class="form-control ">
+        <div *ngIf="empposition.touched && empposition.invalid  " class="alert alert-danger">
+          please enter valid position
+        </div>
+      </div>
+      <div *ngIf="empName.valid ">
+        <button (click)="update()" class="btn btn-info btn-block w-50 mx-auto"> send data </button>
+      </div>
+      <div *ngIf="empName.invalid && empposition.invalid">
+        <button disabled class="btn btn-info btn-block w-50 mx-auto"> send data </button>
+      </div>
+
+    </div>
+  </div>
+</div>

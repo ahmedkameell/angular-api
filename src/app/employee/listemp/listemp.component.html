@@ -1,0 +1,21 @@
+<h1 class="text-center text-info">List Employees</h1>
+<div class="container col-md-6">
+  <div class="card">
+    <div class="card-body">
+     <table class="table table-dark">
+       <tr>
+         <th>ID</th>
+         <th>Name</th>
+         <th>position</th>
+       </tr>
+       <tr *ngFor="let employee of allData">
+         <th>{{employee.id}}</th>
+         <th>{{employee.name}}</th>
+         <th>{{employee.position}}</th>
+         <th><a routerLink="/update/{{employee.id}}" class="btn btn-info">Edit</a></th>
+         <th><button (click)="remove(employee.id)" class="btn btn-danger"> Remove </button></th>
+       </tr>
+     </table>
+  </div>
+</div>
+
